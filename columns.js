@@ -33,6 +33,14 @@ var linkCol = {
   header: 'Link',
   data: property => property.url
 }
+var gMapsCol = {
+  header: 'GMaps',
+  data: property => encodeURI(`https://www.google.com/maps/place/${property.address}, ${property.location_name}`)
+}
+var weekendVisitCol = {
+  header: 'WE visit',
+  data: property => property.weVisit
+}
 
 module.exports = [
   addressCol,
@@ -41,5 +49,7 @@ module.exports = [
   roomsCol,
   avgiftCol,
   areaCol,
-  linkCol
+  linkCol,
+  gMapsCol,
+  weekendVisitCol
 ]
